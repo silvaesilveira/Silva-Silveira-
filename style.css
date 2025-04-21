@@ -1,19 +1,25 @@
+/* Estilos gerais */
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
   background-color: #000;
   color: #fff;
 }
+
+/* Cabeçalho */
 header {
   background-color: #111;
   padding: 20px;
   text-align: center;
   border-bottom: 2px solid #d4af37;
 }
+
 header h1 {
   color: #d4af37;
   font-size: 2rem;
 }
+
+/* Container dos produtos */
 .produtos-container {
   display: flex;
   flex-wrap: wrap;
@@ -21,6 +27,8 @@ header h1 {
   padding: 30px;
   gap: 30px;
 }
+
+/* Cada produto */
 .produto {
   background-color: #222;
   border: 1px solid #444;
@@ -30,22 +38,31 @@ header h1 {
   text-align: center;
   transition: transform 0.3s;
 }
+
+/* Hover do produto */
 .produto:hover {
   transform: scale(1.05);
 }
+
+/* Imagem do produto */
 .produto img {
   width: 100%;
   border-radius: 10px;
 }
+
+/* Título e preço do produto */
 .produto h2 {
   font-size: 1.1rem;
   margin: 10px 0;
 }
+
 .produto .preco {
   color: #d4af37;
   font-weight: bold;
   font-size: 1.2rem;
 }
+
+/* Botão de compra */
 .produto button {
   background-color: #d4af37;
   border: none;
@@ -56,10 +73,13 @@ header h1 {
   cursor: pointer;
   transition: background-color 0.3s;
 }
+
 .produto button:hover {
   background-color: #fff;
   color: #000;
 }
+
+/* Rodapé */
 footer {
   text-align: center;
   padding: 20px;
@@ -67,6 +87,8 @@ footer {
   border-top: 2px solid #d4af37;
   font-size: 0.9rem;
 }
+
+/* Botão do WhatsApp */
 .whatsapp-button {
   position: fixed;
   bottom: 20px;
@@ -91,4 +113,37 @@ footer {
 
 .whatsapp-button:hover {
   background-color: #128C7E;
+}
+
+/* Responsividade para telas pequenas */
+@media (max-width: 768px) {
+  .produtos-container {
+    justify-content: space-around;
+  }
+
+  .produto {
+    width: 45%;
+  }
+}
+
+/* Para dispositivos móveis (telas menores) */
+@media (max-width: 480px) {
+  .produtos-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .produto {
+    width: 90%;
+    margin-bottom: 20px;
+  }
+
+  header h1 {
+    font-size: 1.5rem;
+  }
+
+  .whatsapp-button {
+    bottom: 10px;
+    left: 10px;
+  }
 }
