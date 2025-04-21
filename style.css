@@ -1,34 +1,33 @@
-
-
 body {
   margin: 0;
   font-family: 'Arial', sans-serif;
-  background-color: #000;
-  color: #fff;
+  background-color: #000000; /* Preto mais escuro */
+  color: #ffffff;
 }
 
 header {
-  background-color: #111;
+  background-color: #0a0a0a; /* Preto escuro */
   padding: 20px;
-  text-align: center;
   border-bottom: 2px solid #d4af37;
-  position: relative;
 }
 
-header h1 {
-  color: #d4af37;
-  font-size: 2rem;
-}
-
-.logo-container {
-  position: absolute;
-  top: 20px;
-  left: 20px;
+.topo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-direction: column;
 }
 
 .logo {
   width: 80px;
   height: auto;
+  margin-bottom: 10px;
+}
+
+header h1 {
+  color: #d4af37;
+  font-size: 2rem;
+  text-align: center;
 }
 
 .produtos-container {
@@ -40,8 +39,8 @@ header h1 {
 }
 
 .produto {
-  background-color: #222;
-  border: 1px solid #444;
+  background-color: #111;
+  border: 1px solid #333;
   padding: 15px;
   width: 250px;
   border-radius: 15px;
@@ -88,7 +87,7 @@ header h1 {
 footer {
   text-align: center;
   padding: 20px;
-  background-color: #111;
+  background-color: #0a0a0a;
   border-top: 2px solid #d4af37;
   font-size: 0.9rem;
 }
@@ -123,20 +122,19 @@ footer {
 /* Responsividade */
 @media (max-width: 768px) {
   .produtos-container {
-    justify-content: space-around;
+    justify-content: center;
   }
 
   .produto {
-    width: 45%;
+    width: 80%;
+  }
+
+  .topo {
+    flex-direction: column;
   }
 }
 
 @media (max-width: 480px) {
-  .produtos-container {
-    flex-direction: column;
-    align-items: center;
-  }
-
   .produto {
     width: 90%;
     margin-bottom: 20px;
@@ -146,8 +144,18 @@ footer {
     font-size: 1.5rem;
   }
 
+  .logo {
+    width: 60px;
+  }
+
   .whatsapp-button {
     bottom: 10px;
     left: 10px;
+    padding: 12px;
+    font-size: 14px;
+  }
+
+  .whatsapp-button img {
+    width: 24px;
   }
 }
