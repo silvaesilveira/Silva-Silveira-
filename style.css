@@ -147,3 +147,14 @@ footer {
     left: 10px;
   }
 }
+/* Estilos para a logo */
+.logo-container {
+  position: absolute;
+  top: 20px;
+  left: 20px;
+}
+
+.logo {
+  width: 80px; /* Ajuste o tamanho da logo conforme necessário */
+  height: auto;
+}
