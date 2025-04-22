@@ -20,15 +20,34 @@
         <img src="produto1.jpg" alt="Produto 1" />
         <h2>Anel de Prata</h2>
         <p>R$ 120,00</p>
-        <a href="checkout.html"><button>Comprar</button></a>
+        <a href="#checkout"><button>Comprar</button></a>
       </div>
       <div class="produto">
         <img src="produto2.jpg" alt="Produto 2" />
         <h2>Pulseira de Ouro</h2>
         <p>R$ 450,00</p>
-        <a href="checkout.html"><button>Comprar</button></a>
+        <a href="#checkout"><button>Comprar</button></a>
       </div>
-      <!-- Adicione mais produtos aqui -->
+    </section>
+
+    <!-- Seção de checkout (está no mesmo arquivo para simplificar) -->
+    <section id="checkout" class="checkout">
+      <h2>Detalhes do Pedido</h2>
+      <form>
+        <label for="nome">Nome</label>
+        <input type="text" id="nome" name="nome" required />
+
+        <label for="endereco">Endereço</label>
+        <input type="text" id="endereco" name="endereco" required />
+
+        <label for="pagamento">Forma de pagamento</label>
+        <select id="pagamento" name="pagamento" required>
+          <option value="cartao">Cartão de Crédito</option>
+          <option value="boleto">Boleto Bancário</option>
+        </select>
+
+        <button type="submit">Finalizar Compra</button>
+      </form>
     </section>
   </main>
 
