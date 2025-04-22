@@ -1,161 +1,192 @@
 body {
   margin: 0;
-  font-family: 'Arial', sans-serif;
-  background-color: #000000; /* Preto mais escuro */
-  color: #ffffff;
+  font-family: Arial, sans-serif;
+  background-color: #0a0a0a;
+  color: #fff;
 }
 
 header {
-  background-color: #0a0a0a; /* Preto escuro */
+  background-color: #000;
   padding: 20px;
-  border-bottom: 2px solid #d4af37;
+  text-align: center;
 }
 
 .topo {
   display: flex;
-  align-items: center;
-  justify-content: center;
   flex-direction: column;
+  align-items: center;
+  gap: 10px;
 }
 
 .logo {
   width: 80px;
   height: auto;
-  margin-bottom: 10px;
 }
 
-header h1 {
+h1 {
+  margin: 0;
+  font-size: 28px;
   color: #d4af37;
-  font-size: 2rem;
-  text-align: center;
+}
+
+.login-container {
+  text-align: right;
+}
+
+.login-container button {
+  background-color: #d4af37;
+  color: #000;
+  border: none;
+  padding: 8px 16px;
+  border-radius: 8px;
+  font-weight: bold;
+  cursor: pointer;
 }
 
 .produtos-container {
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
-  padding: 30px;
-  gap: 30px;
+  gap: 20px;
+  padding: 20px;
 }
 
 .produto {
-  background-color: #111;
+  background-color: #1a1a1a;
   border: 1px solid #333;
-  padding: 15px;
+  border-radius: 10px;
   width: 250px;
-  border-radius: 15px;
+  padding: 15px;
   text-align: center;
   transition: transform 0.3s;
 }
 
 .produto:hover {
-  transform: scale(1.05);
+  transform: scale(1.02);
 }
 
 .produto img {
   width: 100%;
+  height: auto;
   border-radius: 10px;
 }
 
 .produto h2 {
-  font-size: 1.1rem;
-  margin: 10px 0;
+  font-size: 18px;
+  color: #fff;
 }
 
-.produto .preco {
+.preco {
   color: #d4af37;
   font-weight: bold;
-  font-size: 1.2rem;
+  margin: 10px 0;
 }
 
 .produto button {
   background-color: #d4af37;
+  color: #000;
   border: none;
-  color: #000;
-  padding: 10px 20px;
+  padding: 10px 16px;
   font-weight: bold;
-  border-radius: 10px;
+  border-radius: 5px;
   cursor: pointer;
-  transition: background-color 0.3s;
-}
-
-.produto button:hover {
-  background-color: #fff;
-  color: #000;
 }
 
 footer {
+  background-color: #000;
   text-align: center;
   padding: 20px;
-  background-color: #0a0a0a;
-  border-top: 2px solid #d4af37;
-  font-size: 0.9rem;
+  color: #777;
 }
 
-/* Botão WhatsApp */
+/* WhatsApp Button */
 .whatsapp-button {
   position: fixed;
   bottom: 20px;
   left: 20px;
-  background-color: #25D366;
-  color: #fff;
-  padding: 15px;
+  background-color: #25d366;
+  color: white;
+  padding: 10px 14px;
   border-radius: 50px;
-  box-shadow: 0 5px 15px rgba(0, 0, 0, 0.2);
   display: flex;
   align-items: center;
-  justify-content: center;
-  font-size: 16px;
   text-decoration: none;
+  font-weight: bold;
   z-index: 1000;
+  box-shadow: 0 0 10px #000;
 }
 
 .whatsapp-button img {
-  width: 30px;
-  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  margin-right: 8px;
 }
 
-.whatsapp-button:hover {
-  background-color: #128C7E;
+/* Modal */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 2000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0,0,0,0.7);
 }
 
-/* Responsividade */
-@media (max-width: 768px) {
-  .produtos-container {
-    justify-content: center;
-  }
+.modal-content {
+  background-color: #111;
+  color: #fff;
+  margin: 10% auto;
+  padding: 20px;
+  border: 2px solid #d4af37;
+  width: 90%;
+  max-width: 400px;
+  border-radius: 10px;
+}
 
-  .produto {
-    width: 80%;
-  }
+.modal-content input {
+  width: 100%;
+  padding: 10px;
+  margin-top: 10px;
+  border: none;
+  border-radius: 5px;
+}
 
+.modal-content button {
+  width: 100%;
+  margin-top: 10px;
+  background-color: #d4af37;
+  color: #000;
+  border: none;
+  padding: 10px;
+  font-weight: bold;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.modal-content .close {
+  color: #d4af37;
+  float: right;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+/* Responsivo */
+@media (max-width: 600px) {
   .topo {
     flex-direction: column;
+    align-items: center;
+  }
+
+  .produtos-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .login-container {
+    align-self: flex-end;
   }
 }
 
-@media (max-width: 480px) {
-  .produto {
-    width: 90%;
-    margin-bottom: 20px;
-  }
-
-  header h1 {
-    font-size: 1.5rem;
-  }
-
-  .logo {
-    width: 60px;
-  }
-
-  .whatsapp-button {
-    bottom: 10px;
-    left: 10px;
-    padding: 12px;
-    font-size: 14px;
-  }
-
-  .whatsapp-button img {
-    width: 24px;
-  }
-}
