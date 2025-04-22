@@ -2,81 +2,41 @@
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Silva & Silveira</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <header>
     <div class="topo">
-      <img src="logo.png" alt="Logo Silva e Silveira" class="logo">
+      <img src="logo.png" alt="Logo Silva e Silveira" class="logo" />
       <h1>Silva & Silveira</h1>
-      <div class="login-container">
-        <button id="openModal">Login / Registrar</button>
-      </div>
     </div>
   </header>
 
   <main>
-    <div class="produtos-container">
+    <section class="produtos">
       <div class="produto">
-        <img src="produto1.jpg" alt="Produto 1">
+        <img src="produto1.jpg" alt="Produto 1" />
         <h2>Anel de Prata</h2>
-        <p class="preco">R$ 120,00</p>
-        <button>Comprar</button>
+        <p>R$ 120,00</p>
+        <a href="checkout.html"><button>Comprar</button></a>
       </div>
-
       <div class="produto">
-        <img src="produto2.jpg" alt="Produto 2">
-        <h2>Colar Dourado</h2>
-        <p class="preco">R$ 180,00</p>
-        <button>Comprar</button>
+        <img src="produto2.jpg" alt="Produto 2" />
+        <h2>Pulseira de Ouro</h2>
+        <p>R$ 450,00</p>
+        <a href="checkout.html"><button>Comprar</button></a>
       </div>
-
-      <div class="produto">
-        <img src="produto3.jpg" alt="Produto 3">
-        <h2>Pulseira Luxo</h2>
-        <p class="preco">R$ 150,00</p>
-        <button>Comprar</button>
-      </div>
-    </div>
+      <!-- Adicione mais produtos aqui -->
+    </section>
   </main>
 
   <footer>
-    © 2025 Silva & Silveira. Todos os direitos reservados.
-  </footer>
-
-  <!-- Modal Login/Registro -->
-  <div id="loginModal" class="modal">
-    <div class="modal-content">
-      <span class="close">&times;</span>
-      <h2>Entrar na Conta</h2>
-      <input type="email" placeholder="Seu e-mail">
-      <input type="password" placeholder="Sua senha">
-      <button class="login-btn">Entrar</button>
-      <hr>
-      <h3>Criar uma Conta</h3>
-      <input type="email" placeholder="Novo e-mail">
-      <input type="password" placeholder="Nova senha">
-      <button class="register-btn">Registrar</button>
+    <div class="rodape">
+      <a href="https://wa.me/19991417120" target="_blank" class="whatsapp">Fale conosco no WhatsApp</a>
+      <p>© 2025 Silva & Silveira. Todos os direitos reservados.</p>
     </div>
-  </div>
-
-  <!-- Botão WhatsApp -->
-  <a href="https://wa.me/5519991417120" target="_blank" class="whatsapp-button">
-    <img src="https://upload.wikimedia.org/wikipedia/commons/6/6b/WhatsApp.svg" alt="WhatsApp" />
-    Fale Conosco
-  </a>
-
-  <script>
-    const modal = document.getElementById("loginModal");
-    const openBtn = document.getElementById("openModal");
-    const closeBtn = document.querySelector(".close");
-
-    openBtn.onclick = () => modal.style.display = "block";
-    closeBtn.onclick = () => modal.style.display = "none";
-    window.onclick = (e) => { if (e.target == modal) modal.style.display = "none"; }
-  </script>
+  </footer>
 </body>
 </html>
-
