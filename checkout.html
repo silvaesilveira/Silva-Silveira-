@@ -1,0 +1,57 @@
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Finalizar Compra - Silva & Silveira</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <header>
+    <div class="topo">
+      <img src="logo.png" alt="Logo Silva e Silveira" class="logo">
+      <h1>Silva & Silveira</h1>
+    </div>
+  </header>
+
+  <main class="checkout">
+    <h2>Finalizar Compra</h2>
+    <form id="checkoutForm">
+      <label>Nome Completo</label>
+      <input type="text" required />
+
+      <label>CPF</label>
+      <input type="text" required />
+
+      <label>Endereço Completo</label>
+      <input type="text" required />
+
+      <label>Forma de Pagamento</label>
+      <select required>
+        <option value="">Selecione</option>
+        <option value="pix">Pix</option>
+        <option value="cartao">Cartão de Crédito</option>
+      </select>
+
+      <button type="submit">Finalizar Compra</button>
+    </form>
+
+    <div id="mensagemSucesso" class="sucesso" style="display:none;">
+      Pedido realizado com sucesso! Agradecemos sua compra.
+    </div>
+  </main>
+
+  <footer>
+    © 2025 Silva & Silveira. Todos os direitos reservados.
+  </footer>
+
+  <script>
+    document.getElementById("checkoutForm").addEventListener("submit", function(e) {
+      e.preventDefault();
+      document.getElementById("mensagemSucesso").style.display = "block";
+      this.style.display = "none";
+    });
+  </script>
+</body>
+</html>
