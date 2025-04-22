@@ -14,6 +14,7 @@ a {
   background-color: #000;
   color: #fff;
   display: flex;
+  justify-content: center;
   align-items: center;
   padding: 10px 20px;
 }
@@ -27,6 +28,16 @@ a {
 h1 {
   font-size: 24px;
   margin: 0;
+}
+
+.login-container {
+  text-align: right;
+  margin: 10px 20px;
+}
+
+.login {
+  color: #ffd700;
+  font-weight: bold;
 }
 
 main {
@@ -78,6 +89,20 @@ button:hover {
   background-color: #e6c200;
 }
 
+.checkout {
+  background-color: #222;
+  padding: 20px;
+  border-radius: 10px;
+  margin-top: 40px;
+}
+
+.checkout input, .checkout select, .checkout button {
+  width: 100%;
+  padding: 10px;
+  margin: 10px 0;
+  border-radius: 5px;
+}
+
 footer {
   background-color: #000;
   color: #aaa;
@@ -98,10 +123,16 @@ footer {
     flex-direction: column;
     align-items: flex-start;
   }
+
   .logo {
     margin-bottom: 10px;
   }
+
   h1 {
     font-size: 20px;
+  }
+
+  .produtos {
+    grid-template-columns: 1fr;
   }
 }
