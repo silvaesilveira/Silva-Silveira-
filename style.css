@@ -59,6 +59,10 @@ a {
 }
 
 /* Estilos da página principal */
+.page-main {
+  display: none;
+}
+
 .topo {
   background-color: #000;
   color: #fff;

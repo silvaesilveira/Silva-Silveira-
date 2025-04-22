@@ -30,69 +30,71 @@
   </div>
 
   <!-- Página Principal -->
-  <header>
-    <div class="topo">
-      <img src="logo.png" alt="Logo Silva e Silveira" class="logo" />
-      <h1>Silva & Silveira</h1>
-    </div>
-  </header>
+  <div class="page-main" id="main-page" style="display: none;">
+    <header>
+      <div class="topo">
+        <img src="logo.png" alt="Logo Silva e Silveira" class="logo" />
+        <h1>Silva & Silveira</h1>
+      </div>
+    </header>
 
-  <!-- Menu Lateral -->
-  <div class="menu-lateral" id="menu-lateral">
-    <div class="menu-item">Prata</div>
-    <div class="menu-item">Ouro</div>
-    <div class="menu-item">Folheado de Ouro</div>
-    <div class="menu-item">Folheado de Prata</div>
-    <div class="menu-item">Feminino</div>
-    <div class="menu-item">Masculino</div>
-    <div class="menu-item">Crianças</div>
-    <div class="menu-item">Brincos</div>
-    <div class="menu-item">Anéis</div>
-    <div class="menu-item">Pulseiras</div>
+    <!-- Menu Lateral -->
+    <div class="menu-lateral" id="menu-lateral">
+      <div class="menu-item">Prata</div>
+      <div class="menu-item">Ouro</div>
+      <div class="menu-item">Folheado de Ouro</div>
+      <div class="menu-item">Folheado de Prata</div>
+      <div class="menu-item">Feminino</div>
+      <div class="menu-item">Masculino</div>
+      <div class="menu-item">Crianças</div>
+      <div class="menu-item">Brincos</div>
+      <div class="menu-item">Anéis</div>
+      <div class="menu-item">Pulseiras</div>
+    </div>
+
+    <!-- Ícone do Menu -->
+    <div class="menu-icone" id="menu-icone">
+      &#9776;
+    </div>
+
+    <main>
+      <!-- Barra de Pesquisa e Carrinho -->
+      <div class="barra-pesquisa">
+        <input type="text" id="search-bar" placeholder="Pesquisar produto..." />
+        <div class="carrinho">
+          <img src="carrinho-icon.png" alt="Carrinho" />
+        </div>
+      </div>
+
+      <!-- Produtos -->
+      <section class="produtos">
+        <div class="produto">
+          <img src="produto1.jpg" alt="Produto 1" />
+          <h2>Anel de Prata</h2>
+          <p>R$ 120,00</p>
+          <button>Comprar</button>
+        </div>
+        <div class="produto">
+          <img src="produto2.jpg" alt="Produto 2" />
+          <h2>Pulseira de Ouro</h2>
+          <p>R$ 450,00</p>
+          <button>Comprar</button>
+        </div>
+        <!-- Adicionar mais produtos aqui -->
+      </section>
+    </main>
+
+    <!-- WhatsApp -->
+    <a href="https://wa.me/19991417120" target="_blank" class="whatsapp">
+      <img src="whatsapp-icon.png" alt="WhatsApp" />
+    </a>
+
+    <footer>
+      <div class="rodape">
+        <p>© 2025 Silva & Silveira. Todos os direitos reservados.</p>
+      </div>
+    </footer>
   </div>
-
-  <!-- Ícone do Menu -->
-  <div class="menu-icone" id="menu-icone">
-    &#9776;
-  </div>
-
-  <main>
-    <!-- Barra de Pesquisa e Carrinho -->
-    <div class="barra-pesquisa">
-      <input type="text" id="search-bar" placeholder="Pesquisar produto..." />
-      <div class="carrinho">
-        <img src="carrinho-icon.png" alt="Carrinho" />
-      </div>
-    </div>
-
-    <!-- Produtos -->
-    <section class="produtos">
-      <div class="produto">
-        <img src="produto1.jpg" alt="Produto 1" />
-        <h2>Anel de Prata</h2>
-        <p>R$ 120,00</p>
-        <button>Comprar</button>
-      </div>
-      <div class="produto">
-        <img src="produto2.jpg" alt="Produto 2" />
-        <h2>Pulseira de Ouro</h2>
-        <p>R$ 450,00</p>
-        <button>Comprar</button>
-      </div>
-      <!-- Adicionar mais produtos aqui -->
-    </section>
-  </main>
-
-  <!-- WhatsApp -->
-  <a href="https://wa.me/19991417120" target="_blank" class="whatsapp">
-    <img src="whatsapp-icon.png" alt="WhatsApp" />
-  </a>
-
-  <footer>
-    <div class="rodape">
-      <p>© 2025 Silva & Silveira. Todos os direitos reservados.</p>
-    </div>
-  </footer>
 
   <script>
     // Mostrar e esconder o menu lateral
@@ -107,7 +109,22 @@
     loginForm.addEventListener("submit", (e) => {
       e.preventDefault();
       document.getElementById("login-screen").style.display = "none";
-      document.querySelector("main").style.display = "block";
+      document.getElementById("main-page").style.display = "block";
+    });
+
+    // Funcionalidade da barra de pesquisa
+    const searchBar = document.getElementById("search-bar");
+    searchBar.addEventListener("input", (e) => {
+      let searchQuery = e.target.value.toLowerCase();
+      let produtos = document.querySelectorAll(".produto");
+      produtos.forEach(produto => {
+        let nomeProduto = produto.querySelector("h2").textContent.toLowerCase();
+        if (nomeProduto.includes(searchQuery)) {
+          produto.style.display = "block";
+        } else {
+          produto.style.display = "none";
+        }
+      });
     });
   </script>
 </body>
